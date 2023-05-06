@@ -84,3 +84,10 @@ C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\obj\Debug\net6.0\refint\A
 C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\obj\Debug\net6.0\AuthorizeService.pdb
 C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\obj\Debug\net6.0\AuthorizeService.genruntimeconfig.cache
 C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\obj\Debug\net6.0\ref\AuthorizeService.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Grpc.Core.Api.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Grpc.Net.Client.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+C:\Users\Drica\proyectos\Yawa\backend\AuthorizeService\bin\Debug\net6.0\Grpc.Net.Common.dll

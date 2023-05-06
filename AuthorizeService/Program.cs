@@ -51,4 +51,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/protos/platforms.proto", async context =>
+{
+    await context.Response.WriteAsync(File.ReadAllText("Protos/rol.proto"));
+});
+
 app.Run();

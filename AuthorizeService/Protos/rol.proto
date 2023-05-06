@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuthorizeService";
+
+service GrpcRol {
+    rpc GetAllRols (GetAllRequest) returns (RolResponse);
+}
+
+message GetAllRequest {}
+
+message GrpcRolModel {
+    int32 RolId = 1;
+    string Name = 2;
+    repeated GrpcPermitionModel Permitions = 3;
+}
+
+message GrpcPermitionModel {
+    int32 PermitionId = 1;
+    string Name = 2;
+}
+
+message RolResponse {
+    repeated GrpcRolModel Rol = 1;
+}
