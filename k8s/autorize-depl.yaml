@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: authorize-depl
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: authorizeservice
+    template:
+        metadata:
+            labels:
+                app: authorizeservice
+        spec:
+            containers:
+                - name: authorizeservice
+                  image: rdani2005/authorizeservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: authorize-clousterip-srv
+spec:
+    type: ClusterIP
+    selector:
+        app: authorizeservice
+    ports:
+        - name: authorizeservice
+          protocol: TCP
+          port: 80
+          targetPort: 80
+        - name: platformgrpc
+          protocol: TCP
+          port: 666
+          targetPort: 666
