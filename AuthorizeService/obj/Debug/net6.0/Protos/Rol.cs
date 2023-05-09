@@ -28,7 +28,7 @@ namespace AuthorizeService {
             "bE1vZGVsEg0KBVJvbElkGAEgASgFEgwKBE5hbWUYAiABKAkSJwoKUGVybWl0",
             "aW9ucxgDIAMoCzITLkdycGNQZXJtaXRpb25Nb2RlbCI3ChJHcnBjUGVybWl0",
             "aW9uTW9kZWwSEwoLUGVybWl0aW9uSWQYASABKAUSDAoETmFtZRgCIAEoCSIp",
-            "CgtSb2xSZXNwb25zZRIaCgNyb2wYASADKAsyDS5HcnBjUm9sTW9kZWwyNQoH",
+            "CgtSb2xSZXNwb25zZRIaCgNSb2wYASADKAsyDS5HcnBjUm9sTW9kZWwyNQoH",
             "R3JwY1JvbBIqCgpHZXRBbGxSb2xzEg4uR2V0QWxsUmVxdWVzdBoMLlJvbFJl",
             "c3BvbnNlQhOqAhBBdXRob3JpemVTZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -718,7 +718,7 @@ namespace AuthorizeService {
       return new RolResponse(this);
     }
 
-    /// <summary>Field number for the "rol" field.</summary>
+    /// <summary>Field number for the "Rol" field.</summary>
     public const int RolFieldNumber = 1;
     private static readonly pb::FieldCodec<global::AuthorizeService.GrpcRolModel> _repeated_rol_codec
         = pb::FieldCodec.ForMessage(10, global::AuthorizeService.GrpcRolModel.Parser);
