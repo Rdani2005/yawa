@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "z/OAmrWg2p94EXvR857lq1Ev8UL2kqEdHoRazvmPCeZGUchZKL9OswylY7beostAIkd8BXDBaydSk4/sAhB98g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Drica\\proyectos\\Yawa\\backend\\MovementService\\MovementService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Drica\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Drica\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Drica\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Drica\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Drica\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Drica\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
