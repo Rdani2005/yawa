@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: auth-depl
+    name: accounts-depl
 spec:
     replicas: 1
     selector:
         matchLabels:
-            app: authservice
+            app: accountservice
     template:
         metadata:
             labels:
-                app: authservice
+                app: accountservice
         spec:
             containers:
-                - name: authservice
-                  image: rdani2005/authservice:latest
+                - name: accountservice
+                  image: rdani2005/accountservice:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: auth-clousterip-srv
+    name: account-clousterip-srv
 spec:
     type: ClusterIP
     selector:
-        app: authservice
+        app: accountservice
     ports:
-        - name: authservice
+        - name: accountservice
           protocol: TCP
           port: 80
           targetPort: 80
