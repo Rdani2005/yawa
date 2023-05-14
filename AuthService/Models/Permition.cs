@@ -9,6 +9,11 @@ namespace AuthService.Models
         public int Id { get; set; }
 
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        public ICollection<PermitionRol> PermitionRols { get; set; }
     }
 }

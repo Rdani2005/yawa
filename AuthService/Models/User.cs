@@ -20,6 +20,16 @@ namespace AuthService.Models
         public String Email { get; set; }
 
         [Required]
+        public String Password { get; set; }
+
+        [Required]
         public DateTime CreatedDay { get; set; } = DateTime.Now;
+
+
+        [Required]
+        public int RoleId { get; set; }
+
+        [Required]
+        public Rol UserRole { get; set; }
     }
 }
