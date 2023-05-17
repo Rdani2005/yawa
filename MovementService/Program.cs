@@ -8,18 +8,18 @@ using MovementService.SyncDataService.Grpc;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// if (builder.Environment.IsProduction())
-// {
-Console.WriteLine("--> Using SQL Server Database, Production Environment");
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(
-    builder.Configuration.GetConnectionString("MovementsConn")
-));
-// }
-// else
-// {
-//     Console.WriteLine("--> Using In Memory Database, Dev Environment");
-//     builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
-// }
+if (builder.Environment.IsProduction())
+{
+    Console.WriteLine("--> Using SQL Server Database, Production Environment");
+    builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(
+        builder.Configuration.GetConnectionString("MovementsConn")
+    ));
+}
+else
+{
+    Console.WriteLine("--> Using In Memory Database, Dev Environment");
+    builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
+}
 
 builder.Services.AddControllers();
 
@@ -51,7 +51,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// PrepDb.PrepPopulation(app, app.Environment.IsProduction());
+PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 
 // app.UseHttpsRedirection();
 

@@ -24,3 +24,11 @@ spec:
                             name: account-clousterip-srv
                             port:
                                 number: 80
+
+                  - path: /api/v1/movements/
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: movement-clousterip-srv
+                            port:
+                                number: 80

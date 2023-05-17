@@ -28,6 +28,7 @@ builder.Services.AddScoped<ICoinTypeRepo, CoinTypeRepo>();
 // Message Bus Client
 builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
 builder.Services.AddSingleton<IMessageBus, MessageBus>();
+// GRPC Client
 builder.Services.AddScoped<IUserDataClient, UserDataClient>();
 
 builder.Services.AddHostedService<MessageBusSubscriber>();

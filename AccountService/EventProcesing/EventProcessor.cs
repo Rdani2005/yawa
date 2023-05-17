@@ -10,8 +10,8 @@ namespace AccountService.EventProcesing
     enum EventType
     {
         UserAdded,
-        IncreaseMovementDone,
-        DecreaseMovementDone,
+        MovementDone,
+
         Undeterminated
     }
 
@@ -23,8 +23,7 @@ namespace AccountService.EventProcesing
             new Dictionary<string, EventType>()
         {
             {"User_Published", EventType.UserAdded},
-            {"Account_Increase_Movement", EventType.IncreaseMovementDone},
-            {"Account_Decrease_Movement", EventType.DecreaseMovementDone},
+            {"Movement_Published", EventType.MovementDone},
             {"default", EventType.Undeterminated}
         };
         private readonly IServiceScopeFactory _scopeFactory;
@@ -48,13 +47,11 @@ namespace AccountService.EventProcesing
                 case EventType.UserAdded:
                     AddUser(message);
                     break;
-                case EventType.IncreaseMovementDone:
-                    IncreaseAmount(message);
-                    break;
-                case EventType.DecreaseMovementDone:
-                    DecreaseAmount(message);
+                case EventType.MovementDone:
+                    PublishMovement(message);
                     break;
                 default:
+                    Console.WriteLine("--> Action not corresponding with this service.");
                     break;
             }
 
@@ -103,49 +100,20 @@ namespace AccountService.EventProcesing
             }
         }
 
-        private void IncreaseAmount(string increasePublishedMessage)
+        private void PublishMovement(string movementPublished)
         {
             using (var scope = _scopeFactory.CreateScope())
             {
                 IAccountRepo repo = scope.ServiceProvider.GetRequiredService<IAccountRepo>();
-                IncreaseAmountDto amountDto =
-                    JsonSerializer.Deserialize<IncreaseAmountDto>(increasePublishedMessage)!;
+                MovementPublishedDto amountDto =
+                    JsonSerializer.Deserialize<MovementPublishedDto>(movementPublished)!;
 
                 try
                 {
                     var account = repo.GetAccountById(amountDto.AccountId);
                     if (account != null)
                     {
-                        account.ActualAmount += amountDto.IncreaseAmount;
-                        repo.UpdateAccount(account);
-                    }
-                    else
-                    {
-                        Console.WriteLine("--> Account doesnt exists.");
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    Console.WriteLine($"--> Could Not update the account to DB {ex.Message}");
-                }
-            }
-        }
-
-        private void DecreaseAmount(string increasePublishedMessage)
-        {
-            using (var scope = _scopeFactory.CreateScope())
-            {
-                IAccountRepo repo = scope.ServiceProvider.GetRequiredService<IAccountRepo>();
-                DecreaseAmountDto amountDto =
-                    JsonSerializer.Deserialize<DecreaseAmountDto>(increasePublishedMessage)!;
-
-                try
-                {
-                    var account = repo.GetAccountById(amountDto.AccountId);
-                    if (account != null)
-                    {
-                        account.ActualAmount -= amountDto.IncreaseAmount;
+                        account.ActualAmount += amountDto.MovementAmount;
                         repo.UpdateAccount(account);
                     }
                     else
@@ -160,6 +128,9 @@ namespace AccountService.EventProcesing
                 }
             }
         }
+
+
+
     }
 
 

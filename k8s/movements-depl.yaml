@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: accounts-depl
+    name: movement-depl
 spec:
     replicas: 1
     selector:
         matchLabels:
-            app: accountservice
+            app: movementservice
     template:
         metadata:
             labels:
-                app: accountservice
+                app: movementservice
         spec:
             containers:
-                - name: accountservice
-                  image: rdani2005/accountservice:latest
+                - name: movementservice
+                  image: rdani2005/movementservice:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: account-clousterip-srv
+    name: movement-clousterip-srv
 spec:
     type: ClusterIP
     selector:
-        app: accountservice
+        app: authservice
     ports:
-        - name: accountservice
+        - name: movementservice
           protocol: TCP
           port: 80
           targetPort: 80
-        - name: accountgrpc
+        - name: movementgrpc
           protocol: TCP
           port: 666
           targetPort: 666
