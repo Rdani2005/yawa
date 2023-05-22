@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "17XrBpImsP5rQ2pOPi0BWEt2mX5kS7Q0STA2+u/7yHU=",
+  "Source": "BinnacleService",
+  "BasePath": "_content/BinnacleService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
