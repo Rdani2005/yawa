@@ -92,3 +92,4 @@ C:\Users\Drica\proyectos\Yawa\backend\BinnacleService\obj\Debug\net6.0\refint\Bi
 C:\Users\Drica\proyectos\Yawa\backend\BinnacleService\obj\Debug\net6.0\BinnacleService.pdb
 C:\Users\Drica\proyectos\Yawa\backend\BinnacleService\obj\Debug\net6.0\BinnacleService.genruntimeconfig.cache
 C:\Users\Drica\proyectos\Yawa\backend\BinnacleService\obj\Debug\net6.0\ref\BinnacleService.dll
+C:\Users\Drica\proyectos\Yawa\backend\BinnacleService\bin\Debug\net6.0\appsettings.Production.json
